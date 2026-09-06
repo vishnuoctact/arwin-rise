@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-size: 16.5px;
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "lnum" 1;
+    font-variant-numeric: lining-nums proportional-nums;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  @media (min-width: 640px) {
+    html {
+      font-size: 17px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    html {
+      font-size: 17.5px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    html {
+      font-size: 18px;
+    }
+  }
+
+  body {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    background-color: #FAF7F2;
+    color: #222222;
+    overflow-x: hidden;
+  }
+
+  /* Enhance legibility for micro-text badges and uppercase tracking tags */
+  [class*="text-[9px]"], 
+  [class*="text-[9.5px]"], 
+  [class*="text-[10px]"] {
+    font-size: 11px !important;
+  }
+
+  [class*="text-[10.5px]"], 
+  [class*="text-[11px]"] {
+    font-size: 12px !important;
+  }
+
+  /* Ultra-Thin Elegant Champagne Scrollbar */
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #C5A880;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #771722;
+  }
+
+  /* No Scrollbar Utility */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  ::selection {
+    background-color: #8B0000;
+    color: #FFFFFF;
+  }
+}
+
+@keyframes luxuryShimmer {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  40%, 100% {
+    transform: translateX(350%) skewX(-20deg);
+    opacity: 0;
+  }
+}
+
+.animate-shimmer {
+  animation: luxuryShimmer 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
