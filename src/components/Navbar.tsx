@@ -6,7 +6,7 @@ import { useContent } from '../context/ContentContext';
 interface NavbarProps {
   currentPage: string;
   onNavigate: (page: string) => void;
-  onOpenPreview: () => void;
+  onOpenPreview?: () => void;
   onOpenAuth?: () => void;
   onOpenDashboard?: () => void;
   onOpenListModal?: () => void;
@@ -15,7 +15,6 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ 
   currentPage, 
   onNavigate, 
-  onOpenPreview,
   onOpenAuth,
   onOpenDashboard,
   onOpenListModal
@@ -186,24 +185,15 @@ export const Navbar: React.FC<NavbarProps> = ({
           </nav>
 
           {/* Desktop Right Action CTAs */}
-          <div className="hidden lg:flex items-center gap-2.5 flex-shrink-0">
+          <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
             
-            {/* Post Property Quick Trigger */}
+            {/* Post Luxury Property Quick Trigger */}
             <button
               onClick={onOpenListModal}
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 text-[10.5px] font-sans font-semibold tracking-[0.14em] uppercase text-[#771722] bg-[#771722]/8 hover:bg-[#771722]/15 border border-[#771722]/30 transition-all duration-200 cursor-pointer"
+              className="group inline-flex items-center gap-1.5 bg-[#771722] hover:bg-[#8E1E2C] text-white px-4 py-2 text-[10.5px] font-sans font-bold tracking-widest uppercase shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer"
             >
-              <Plus className="w-3.5 h-3.5 text-[#771722]" />
+              <Plus className="w-3.5 h-3.5 text-[#C5A880] group-hover:rotate-90 transition-transform duration-200" />
               <span>POST PROPERTY</span>
-            </button>
-
-            {/* Private Preview CTA */}
-            <button
-              onClick={onOpenPreview}
-              className="group inline-flex items-center gap-2 bg-[#771722] hover:bg-[#8E1E2C] text-white px-4 py-2 text-[10.5px] font-sans font-semibold tracking-[0.16em] uppercase shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer"
-            >
-              <span>PRIVATE PREVIEW</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#C5A880] group-hover:translate-x-1 transition-transform duration-200" />
             </button>
 
             {/* Patron / Seller User Profile Trigger */}
@@ -370,22 +360,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                 setMobileMenuOpen(false);
                 if (onOpenListModal) onOpenListModal();
               }}
-              className="w-full bg-[#FAF7F2] border border-[#771722] text-[#771722] py-3 px-4 text-xs font-bold tracking-widest uppercase flex items-center justify-center gap-2"
+              className="w-full bg-[#771722] hover:bg-[#8E1E2C] text-white py-3 px-4 text-xs font-bold tracking-widest uppercase flex items-center justify-center gap-2 shadow-md cursor-pointer"
             >
-              <Plus className="w-4 h-4 text-[#771722]" />
+              <Plus className="w-4 h-4 text-[#C5A880]" />
               <span>POST LUXURY PROPERTY</span>
-            </button>
-
-            {/* Request Private Preview CTA */}
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenPreview();
-              }}
-              className="w-full bg-[#771722] hover:bg-[#8E1E2C] text-white py-3 px-4 text-xs font-semibold tracking-widest uppercase flex items-center justify-center gap-2 shadow-md"
-            >
-              <span>REQUEST PRIVATE PREVIEW</span>
-              <ArrowRight className="w-4 h-4 text-[#C5A880]" />
             </button>
 
             {/* Patron Auth / Dashboard Portal Mobile */}
