@@ -43,6 +43,17 @@ export const AboutPage: React.FC<AboutPageProps> = ({
   const heroTitle = aboutPage?.heroTitle || "Built on Values. Driven by Relationships.";
   const heroSubtitle = aboutPage?.heroSubtitle || "For over a decade, ARWIN RISE has guided luxury homebuyers, HNIs, and global NRI investors with uncompromising fiduciary integrity and bespoke property advisory.";
 
+  const founderName = aboutPage?.founderName || "Kamal Yellapragada";
+  const founderTitle = aboutPage?.founderTitle || "FOUNDER & MANAGING DIRECTOR";
+  const founderSubtitle = aboutPage?.founderSubtitle || "Property Expert & NRI Portfolio Manager · Business Coach";
+  const founderImage = aboutPage?.founderImage || "/images/founder-pro.jpg";
+  const founderQuote = aboutPage?.founderQuote || "“Real estate is not just about properties—it's about people, possibilities, and where your next chapter begins. Life Starts Here.”";
+  const founderParagraphs = aboutPage?.founderParagraphs?.length ? aboutPage.founderParagraphs : [
+    "When establishing ARWIN RISE, our core mandate was straightforward: to replace traditional broker friction with institutional-grade, fiduciary advisory. Every property we represent undergoes exhaustive 30+ year legal forensics, title verification, and valuation modeling before reaching our patrons.",
+    "Whether curating ultra-luxury sky villas in Neopolis, bespoke farm retreats in Shankarpally, or strategic overseas allocations in Dubai, our commitment remains absolute: safeguarding our patrons' wealth and unlocking enduring generational appreciation."
+  ];
+  const founderDesk = aboutPage?.founderDesk || "FOUNDER'S DESK · HYDERABAD & DUBAI";
+
   const pillarsTag = aboutPage?.pillarsTag || "OUR FOUNDATION";
   const pillarsTitle = aboutPage?.pillarsTitle || "Four Pillars of Advisory Excellence";
   const pillars = aboutPage?.pillars?.length ? aboutPage.pillars : FALLBACK_PILLARS;
@@ -94,8 +105,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             >
               <div className="relative w-full max-w-sm aspect-[4/5] overflow-hidden bg-[#FAF7F2] shadow-2xl border-2 border-[#EAE3DA] group">
                 <img
-                  src="/images/founder-pro.jpg"
-                  alt="Kamal Yellapragada - Founder & Managing Director, ARWIN RISE"
+                  src={founderImage}
+                  alt={`${founderName} - ${founderTitle}, ARWIN RISE`}
                   className="w-full h-full object-cover object-top filter brightness-[1.01] transition-transform duration-700 group-hover:scale-103"
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = '/images/founder.jpg';
@@ -129,41 +140,38 @@ export const AboutPage: React.FC<AboutPageProps> = ({
               {/* Title & Role */}
               <div className="space-y-1">
                 <h2 className="font-serif text-3xl sm:text-4xl text-[#141210] font-normal leading-tight">
-                  Kamal Yellapragada
+                  {founderName}
                 </h2>
                 <div className="text-xs sm:text-[13px] font-sans font-bold text-[#771722] uppercase tracking-[0.16em]">
-                  FOUNDER & MANAGING DIRECTOR
+                  {founderTitle}
                 </div>
                 <div className="text-xs sm:text-[13px] font-sans text-neutral-500 font-light">
-                  Property Expert & NRI Portfolio Manager · Business Coach
+                  {founderSubtitle}
                 </div>
               </div>
 
               {/* Quote */}
               <div className="p-4 bg-[#FAF7F2] border-l-2 border-[#C5A880]">
                 <blockquote className="font-serif text-base sm:text-[17px] text-[#222222] italic font-normal leading-relaxed">
-                  “Real estate is not just about properties—it's about people, possibilities, and where your next chapter begins. Life Starts Here.”
+                  {founderQuote}
                 </blockquote>
               </div>
 
               {/* Founder Narrative */}
               <div className="space-y-3.5 text-sm sm:text-[15px] text-[#55504A] font-sans leading-relaxed font-light">
-                <p>
-                  When establishing ARWIN RISE, our core mandate was straightforward: to replace traditional broker friction with institutional-grade, fiduciary advisory. Every property we represent undergoes exhaustive 30+ year legal forensics, title verification, and valuation modeling before reaching our patrons.
-                </p>
-                <p>
-                  Whether curating ultra-luxury sky villas in Neopolis, bespoke farm retreats in Shankarpally, or strategic overseas allocations in Dubai, our commitment remains absolute: safeguarding our patrons' wealth and unlocking enduring generational appreciation.
-                </p>
+                {founderParagraphs.map((para, pIdx) => (
+                  <p key={pIdx}>{para}</p>
+                ))}
               </div>
 
               {/* Signature Block & Action CTAs */}
               <div className="pt-4 border-t border-[#EAE3DA] flex flex-col sm:flex-row sm:items-center justify-between gap-5">
                 <div className="space-y-1">
                   <div className="font-signature text-3xl sm:text-4xl text-[#C5A880] font-normal leading-tight select-none">
-                    Kamal Yellapragada
+                    {founderName}
                   </div>
                   <div className="text-[11px] font-sans text-neutral-400 uppercase tracking-widest">
-                    FOUNDER'S DESK · HYDERABAD & DUBAI
+                    {founderDesk}
                   </div>
                 </div>
 
@@ -177,7 +185,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
                   </button>
 
                   <a
-                    href={`https://wa.me/${whatsappPhone}?text=Hello%20Kamal%20Yellapragada%2C%20I%20would%20like%20to%20request%20a%20private%20property%20advisory%20consultation.`}
+                    href={`https://wa.me/${whatsappPhone}?text=Hello%20${encodeURIComponent(founderName)}%2C%20I%20would%20like%20to%20request%20a%20private%20property%20advisory%20consultation.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 border border-[#EAE3DA] hover:border-[#771722] text-[#222222] bg-white px-4 py-3 text-xs font-sans font-semibold tracking-wider uppercase transition-colors cursor-pointer"

@@ -64,6 +64,20 @@ Sitemap: https://arwinrise.com/sitemap.xml`,
       ogImage: "/images/by-invitation.jpg",
       noIndex: false
     },
+    'she-rise': {
+      title: "SHE RISE | Empowering Women in Wealth, Leadership & Real Estate Ownership",
+      description: "An affirmative wealth creation and property advisory initiative by ARWIN RISE fostering independent real estate ownership and executive leadership for women.",
+      keywords: "she rise, women empowerment real estate, women property buyers india, female real estate investors hyderabad",
+      ogImage: "/images/she-rise-hero.jpg",
+      noIndex: false
+    },
+    'golden-circle': {
+      title: "The Golden Circle | Elite Investor Syndicate & Private Wealth Club",
+      description: "An invitation-only alliance of High-Net-Worth Individuals, Family Offices, and Global NRI Visionaries gaining preferential access to institutional-grade luxury real estate opportunities.",
+      keywords: "the golden circle, luxury real estate syndicate, hni property club india, private real estate allocations hyderabad, off-market penthouses",
+      ogImage: "/images/golden-circle-hero.jpg",
+      noIndex: false
+    },
     residences: {
       title: "Curated Residences & Penthouses | ARWIN RISE",
       description: "Explore our handpicked portfolio of Grade-A luxury high-rises, sky villas, and signature estates starting from ₹1.5 Cr to ₹35 Cr+ in Hyderabad & Dubai.",
@@ -130,11 +144,11 @@ export const DEFAULT_SITE_SETTINGS: SiteSettings = {
     { id: 'nav-home', label: 'HOME', page: 'home', isVisible: true },
     { id: 'nav-about', label: 'ABOUT US', page: 'about', isVisible: true },
     { id: 'nav-residences', label: 'RESIDENCES', page: 'residences', isVisible: true },
-    { id: 'nav-investors', label: 'INVESTORS', page: 'investors', isVisible: true },
+    { id: 'nav-golden-circle', label: 'GOLDEN CIRCLE', page: 'golden-circle', isVisible: true },
     { id: 'nav-nri', label: 'NRI CONNECT', page: 'nri-connect', isVisible: true },
     { id: 'nav-contact', label: 'CONTACT', page: 'contact', isVisible: true }
   ],
-  navCtaText: "PRIVATE PREVIEW"
+  navCtaText: "POST PROPERTY"
 };
 
 export const DEFAULT_PARTNER_SECTION: PartnerSectionData = {
@@ -339,9 +353,9 @@ export const DEFAULT_NRI_PAGE: NriPageData = {
 };
 
 export const DEFAULT_ABOUT_PAGE: AboutPageData = {
-  heroTag: "OUR STORY & PHILOSOPHY · LIFE STARTS HERE",
+  heroTag: "OUR HERITAGE & LEADERSHIP · LIFE STARTS HERE",
   heroTitle: "Built on Values. Driven by Relationships.",
-  heroSubtitle: "For over a decade, ARWIN RISE has guided luxury homebuyers and global NRI investors with uncompromising integrity and bespoke property advisory.",
+  heroSubtitle: "For over a decade, ARWIN RISE has guided luxury homebuyers, HNIs, and global NRI investors with uncompromising fiduciary integrity and bespoke property advisory.",
   
   philosophyTag: "OUR ADVISORY PHILOSOPHY",
   philosophyHeadline: "“Real estate is not just about properties—it's about people, possibilities, and where your next chapter begins. Life Starts Here.”",
@@ -349,7 +363,19 @@ export const DEFAULT_ABOUT_PAGE: AboutPageData = {
     "When we established ARWIN RISE, our core commitment was simple: to create a trusted advisory standard that stands as an enduring pillar for homebuyers and wealth creators. Every transaction and portfolio we curate is guided by uncompromising due diligence and deep fiduciary commitment.",
     "With over ₹4,500 Cr+ in advised luxury portfolio, 12+ years of market mastery, and 350+ elite families guided across India and the UAE, ARWIN RISE delivers high appreciation assets and end-to-end peace of mind."
   ],
-  philosophyImage: "/images/by-invitation.jpg",
+  philosophyImage: "/images/founder-pro.jpg",
+
+  // Founder & Leadership Details
+  founderName: "Kamal Yellapragada",
+  founderTitle: "FOUNDER & MANAGING DIRECTOR",
+  founderSubtitle: "Property Expert & NRI Portfolio Manager · Business Coach",
+  founderImage: "/images/founder-pro.jpg",
+  founderQuote: "“Real estate is not just about properties—it's about people, possibilities, and where your next chapter begins. Life Starts Here.”",
+  founderParagraphs: [
+    "When establishing ARWIN RISE, our core mandate was straightforward: to replace traditional broker friction with institutional-grade, fiduciary advisory. Every property we represent undergoes exhaustive 30+ year legal forensics, title verification, and valuation modeling before reaching our patrons.",
+    "Whether curating ultra-luxury sky villas in Neopolis, bespoke farm retreats in Shankarpally, or strategic overseas allocations in Dubai, our commitment remains absolute: safeguarding our patrons' wealth and unlocking enduring generational appreciation."
+  ],
+  founderDesk: "FOUNDER'S DESK · HYDERABAD & DUBAI",
   
   advisoryName: "Arwin Advisory Desk",
   advisoryDesk: "PRIVATE CLIENT GROUP",

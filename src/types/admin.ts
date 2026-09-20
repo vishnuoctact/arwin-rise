@@ -202,6 +202,15 @@ export interface AboutPageData {
   philosophyParagraphs: string[];
   philosophyImage: string;
   
+  // Founder & Leadership Details
+  founderName?: string;
+  founderTitle?: string;
+  founderSubtitle?: string;
+  founderImage?: string;
+  founderQuote?: string;
+  founderParagraphs?: string[];
+  founderDesk?: string;
+
   advisoryName: string;
   advisoryDesk: string;
   advisoryLocation: string;

@@ -186,13 +186,13 @@ export const AdminDashboard: React.FC<{ onNavigateHome: () => void }> = ({ onNav
   const [logoDark, setLogoDark] = useState(settings.logoDarkUrl || '/images/arwin-rise-lockup.png');
   const [logoLight, setLogoLight] = useState(settings.logoLightUrl || '/images/arwin-rise-lockup-light.png');
   const [logoSymbol, setLogoSymbol] = useState(settings.logoSymbolUrl || '/images/arwin-rise-symbol.png');
-  const [navCta, setNavCta] = useState(settings.navCtaText || 'PRIVATE PREVIEW');
+  const [navCta, setNavCta] = useState(settings.navCtaText || 'POST PROPERTY');
   const [navItems, setNavItems] = useState<NavigationLink[]>(
     settings.navLinks || [
       { id: 'nav-home', label: 'HOME', page: 'home', isVisible: true },
       { id: 'nav-about', label: 'ABOUT US', page: 'about', isVisible: true },
       { id: 'nav-residences', label: 'RESIDENCES', page: 'residences', isVisible: true },
-      { id: 'nav-investors', label: 'INVESTORS', page: 'investors', isVisible: true },
+      { id: 'nav-golden-circle', label: 'GOLDEN CIRCLE', page: 'golden-circle', isVisible: true },
       { id: 'nav-nri', label: 'NRI CONNECT', page: 'nri-connect', isVisible: true },
       { id: 'nav-contact', label: 'CONTACT', page: 'contact', isVisible: true }
     ]
@@ -3620,10 +3620,98 @@ export const AdminDashboard: React.FC<{ onNavigateHome: () => void }> = ({ onNav
                     </div>
                   </div>
 
-                  {/* SECTION 4: 4 PILLARS OF EXCELLENCE */}
+                  {/* SECTION 4: FOUNDER & LEADERSHIP SPOTLIGHT */}
                   <div className="bg-[#14110E] border border-[#24201C] rounded-xl p-6 space-y-4 text-xs shadow-xl">
                     <h2 className="text-xs font-mono font-semibold tracking-[0.2em] text-[#C5A880] uppercase flex items-center gap-2">
-                      <ShieldCheck className="w-4 h-4" /> 4. Four Core Pillars
+                      <Award className="w-4 h-4" /> 4. Founder & Leadership Spotlight
+                    </h2>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-[#FAF7F2] mb-1 font-medium">Founder Full Name</label>
+                        <input
+                          type="text"
+                          value={aboutForm.founderName || ''}
+                          onChange={(e) => setAboutForm({ ...aboutForm, founderName: e.target.value })}
+                          placeholder="e.g. Kamal Yellapragada"
+                          className="w-full px-3 py-2 bg-[#090807] border border-[#26201B] rounded-lg text-[#FAF7F2] font-serif text-sm"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-[#FAF7F2] mb-1 font-medium">Designation / Official Title</label>
+                        <input
+                          type="text"
+                          value={aboutForm.founderTitle || ''}
+                          onChange={(e) => setAboutForm({ ...aboutForm, founderTitle: e.target.value })}
+                          placeholder="e.g. FOUNDER & MANAGING DIRECTOR"
+                          className="w-full px-3 py-2 bg-[#090807] border border-[#26201B] rounded-lg text-[#FAF7F2] font-sans uppercase tracking-wider"
+                        />
+                      </div>
+
+                      <div className="sm:col-span-2">
+                        <label className="block text-[#FAF7F2] mb-1 font-medium">Credentials & Expertise Tagline</label>
+                        <input
+                          type="text"
+                          value={aboutForm.founderSubtitle || ''}
+                          onChange={(e) => setAboutForm({ ...aboutForm, founderSubtitle: e.target.value })}
+                          placeholder="e.g. Property Expert & NRI Portfolio Manager · Business Coach"
+                          className="w-full px-3 py-2 bg-[#090807] border border-[#26201B] rounded-lg text-[#FAF7F2]"
+                        />
+                      </div>
+
+                      {/* Founder Portrait Photo */}
+                      <div className="sm:col-span-2">
+                        <ImageInputWithPicker
+                          label="Founder Executive Portrait Photo"
+                          value={aboutForm.founderImage || ''}
+                          onChange={(url) => setAboutForm({ ...aboutForm, founderImage: url })}
+                          helperText="High-resolution portrait photo for the Founder spotlight (recommended aspect ratio: 4:5)."
+                        />
+                      </div>
+
+                      <div className="sm:col-span-2">
+                        <label className="block text-[#FAF7F2] mb-1 font-medium">Founder Philosophy Quote</label>
+                        <textarea
+                          rows={2}
+                          value={aboutForm.founderQuote || ''}
+                          onChange={(e) => setAboutForm({ ...aboutForm, founderQuote: e.target.value })}
+                          placeholder="“Real estate is not just about properties—it's about people, possibilities, and where your next chapter begins. Life Starts Here.”"
+                          className="w-full px-3 py-2 bg-[#090807] border border-[#26201B] rounded-lg text-[#FAF7F2] font-serif text-sm"
+                        />
+                      </div>
+
+                      <div className="sm:col-span-2">
+                        <label className="block text-[#FAF7F2] mb-1 font-medium">Founder Narrative (Separate paragraphs with blank lines)</label>
+                        <textarea
+                          rows={4}
+                          value={(aboutForm.founderParagraphs || []).join('\n\n')}
+                          onChange={(e) => setAboutForm({ 
+                            ...aboutForm, 
+                            founderParagraphs: e.target.value.split('\n\n').filter(Boolean) 
+                          })}
+                          placeholder="Detail the founding mission, fiduciary philosophy, and commitment to investors..."
+                          className="w-full px-3 py-2 bg-[#090807] border border-[#26201B] rounded-lg text-[#FAF7F2] text-xs leading-relaxed"
+                        />
+                      </div>
+
+                      <div className="sm:col-span-2">
+                        <label className="block text-[#FAF7F2] mb-1 font-medium">Founder Desk & Signature Location Tag</label>
+                        <input
+                          type="text"
+                          value={aboutForm.founderDesk || ''}
+                          onChange={(e) => setAboutForm({ ...aboutForm, founderDesk: e.target.value })}
+                          placeholder="e.g. FOUNDER'S DESK · HYDERABAD & DUBAI"
+                          className="w-full px-3 py-2 bg-[#090807] border border-[#26201B] rounded-lg text-[#FAF7F2] uppercase tracking-widest text-[11px]"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* SECTION 5: 4 PILLARS OF EXCELLENCE */}
+                  <div className="bg-[#14110E] border border-[#24201C] rounded-xl p-6 space-y-4 text-xs shadow-xl">
+                    <h2 className="text-xs font-mono font-semibold tracking-[0.2em] text-[#C5A880] uppercase flex items-center gap-2">
+                      <ShieldCheck className="w-4 h-4" /> 5. Four Core Pillars
                     </h2>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -4865,6 +4953,8 @@ export const AdminDashboard: React.FC<{ onNavigateHome: () => void }> = ({ onNav
                       {[
                         { id: 'home', label: 'Home Page' },
                         { id: 'about', label: 'About Us' },
+                        { id: 'she-rise', label: 'SHE RISE' },
+                        { id: 'golden-circle', label: 'Golden Circle' },
                         { id: 'residences', label: 'Residences Portfolio' },
                         { id: 'investors', label: 'Investors Page' },
                         { id: 'nriConnect', label: 'NRI Connect' },
