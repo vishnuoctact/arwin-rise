@@ -16,6 +16,7 @@ import { InvestorsPage } from './pages/InvestorsPage';
 import { NriConnectPage } from './pages/NriConnectPage';
 import { ContactPage } from './pages/ContactPage';
 import { SheRisePage } from './pages/SheRisePage';
+import { GoldenCirclePage } from './pages/GoldenCirclePage';
 import { ProjectLandingPage } from './pages/ProjectLandingPage';
 import { NewsArticlePage } from './pages/NewsArticlePage';
 import { CustomDynamicPage } from './pages/CustomDynamicPage';
@@ -120,7 +121,7 @@ function MainApp() {
         return;
       }
 
-      const validPages = ['home', 'about', 'she-rise', 'residences', 'investors', 'nri-connect', 'contact', 'admin'];
+      const validPages = ['home', 'about', 'she-rise', 'golden-circle', 'residences', 'investors', 'nri-connect', 'contact', 'admin'];
       if (validPages.includes(hash)) {
         setCurrentPage(hash);
         setActiveProject(null);
@@ -288,6 +289,13 @@ function MainApp() {
 
               {currentPage === 'she-rise' && (
                 <SheRisePage
+                  onRequestPreview={() => setIsPreviewModalOpen(true)}
+                  onNavigateHome={() => navigateToPage('home')}
+                />
+              )}
+
+              {currentPage === 'golden-circle' && (
+                <GoldenCirclePage
                   onRequestPreview={() => setIsPreviewModalOpen(true)}
                   onNavigateHome={() => navigateToPage('home')}
                 />

@@ -53,7 +53,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { label: 'HOME', page: 'home' },
     { label: 'ABOUT US', page: 'about' },
     { label: 'RESIDENCES', page: 'residences' },
-    { label: 'INVESTORS', page: 'investors' },
+    { label: 'GOLDEN CIRCLE', page: 'golden-circle' },
     { label: 'NRI CONNECT', page: 'nri-connect' },
     { label: 'CONTACT', page: 'contact' },
   ];
@@ -148,6 +148,57 @@ export const Navbar: React.FC<NavbarProps> = ({
                         }`}
                       >
                         SHE RISE
+                      </button>
+                    </div>
+                  </div>
+                );
+              }
+
+              if (link.page === 'golden-circle') {
+                return (
+                  <div 
+                    key={link.label}
+                    className="relative group py-2"
+                  >
+                    <button
+                      onClick={() => handleNavClick('golden-circle')}
+                      className={`text-[11px] font-sans font-medium tracking-[0.16em] uppercase transition-all duration-200 relative flex items-center gap-1 cursor-pointer ${
+                        currentPage === 'golden-circle' || currentPage === 'investors'
+                          ? 'text-[#771722] font-semibold'
+                          : 'text-[#55504A] group-hover:text-[#771722]'
+                      }`}
+                    >
+                      <span>{link.label}</span>
+                      <ChevronDown className="w-3 h-3 text-[#C5A880] transition-transform duration-200 group-hover:rotate-180" />
+                      {(currentPage === 'golden-circle' || currentPage === 'investors') && (
+                        <span className="absolute -bottom-1 left-0 w-full h-[1.6px] bg-[#C5A880]" />
+                      )}
+                    </button>
+
+                    {/* Clean Dropdown Menu */}
+                    <div className="absolute top-full left-0 w-56 bg-[#FAF7F2] border border-[#EAE3DA] shadow-xl py-1.5 z-50 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 translate-y-1 group-hover:translate-y-0">
+                      <button
+                        onClick={() => handleNavClick('golden-circle')}
+                        className={`w-full text-left px-4 py-2.5 text-[11px] font-sans tracking-[0.14em] uppercase transition-colors cursor-pointer ${
+                          currentPage === 'golden-circle'
+                            ? 'bg-[#771722]/8 text-[#771722] font-bold'
+                            : 'text-[#55504A] hover:bg-[#F0EBE1] hover:text-[#771722]'
+                        }`}
+                      >
+                        Golden Circle Club
+                      </button>
+
+                      <div className="my-1 border-t border-[#EAE3DA]/70" />
+
+                      <button
+                        onClick={() => handleNavClick('investors')}
+                        className={`w-full text-left px-4 py-2.5 text-[11px] font-sans tracking-[0.14em] uppercase transition-colors cursor-pointer ${
+                          currentPage === 'investors'
+                            ? 'bg-[#771722]/8 text-[#771722] font-bold'
+                            : 'text-[#55504A] hover:bg-[#F0EBE1] hover:text-[#771722]'
+                        }`}
+                      >
+                        Investors
                       </button>
                     </div>
                   </div>
@@ -316,6 +367,50 @@ export const Navbar: React.FC<NavbarProps> = ({
                       }`}
                     >
                       <span>SHE RISE</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-[#C5A880]" />
+                    </button>
+                  </div>
+                );
+              }
+
+              if (link.page === 'golden-circle') {
+                return (
+                  <div key={link.label} className="space-y-1">
+                    <button
+                      onClick={() => handleNavClick('golden-circle')}
+                      className={`text-xs font-sans tracking-widest uppercase py-2.5 px-3 rounded-none flex items-center justify-between text-left w-full transition-colors cursor-pointer ${
+                        currentPage === 'golden-circle'
+                          ? 'bg-[#771722]/10 text-[#771722] font-bold border-l-2 border-[#771722]'
+                          : 'text-[#4A4A4A] hover:bg-[#F0EBE1]'
+                      }`}
+                    >
+                      <span>GOLDEN CIRCLE</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-[#C5A880]" />
+                    </button>
+                    
+                    {/* Golden Circle Club Mobile Sub-link */}
+                    <button
+                      onClick={() => handleNavClick('golden-circle')}
+                      className={`text-xs font-sans tracking-widest uppercase py-2 pl-6 pr-3 rounded-none flex items-center justify-between text-left w-full transition-colors cursor-pointer ${
+                        currentPage === 'golden-circle'
+                          ? 'bg-[#771722]/10 text-[#771722] font-bold border-l-2 border-[#771722]'
+                          : 'text-[#55504A] hover:bg-[#F0EBE1] hover:text-[#771722]'
+                      }`}
+                    >
+                      <span>GOLDEN CIRCLE CLUB</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-[#C5A880]" />
+                    </button>
+
+                    {/* Investors Mobile Sub-link */}
+                    <button
+                      onClick={() => handleNavClick('investors')}
+                      className={`text-xs font-sans tracking-widest uppercase py-2 pl-6 pr-3 rounded-none flex items-center justify-between text-left w-full transition-colors cursor-pointer ${
+                        currentPage === 'investors'
+                          ? 'bg-[#771722]/10 text-[#771722] font-bold border-l-2 border-[#771722]'
+                          : 'text-[#55504A] hover:bg-[#F0EBE1] hover:text-[#771722]'
+                      }`}
+                    >
+                      <span>INVESTORS</span>
                       <ArrowRight className="w-3.5 h-3.5 text-[#C5A880]" />
                     </button>
                   </div>

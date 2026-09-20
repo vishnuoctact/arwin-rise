@@ -45,6 +45,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
         home: 'Life Starts Here · Private Luxury Property Advisory',
         about: 'About Us · Advisory Heritage',
         'she-rise': 'SHE RISE · Empowering Women in Wealth, Leadership & Asset Ownership',
+        'golden-circle': 'The Golden Circle · Private Syndicate & Elite Investor Club',
         residences: 'Curated Residences & Sky Villas',
         investors: 'Investor Advantage & High-Growth Corridors',
         nriConnect: 'NRI Connect & Cross-Border Wealth Advisory',

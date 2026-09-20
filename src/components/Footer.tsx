@@ -106,16 +106,16 @@ export const Footer: React.FC<FooterProps> = ({
             </ul>
           </div>
 
-          {/* Column 2: INVESTORS */}
+          {/* Column 2: GOLDEN CIRCLE */}
           <div className="space-y-4">
             <h4 className="text-xs font-sans font-bold tracking-[0.2em] text-arwin-charcoal uppercase">
-              INVESTORS
+              GOLDEN CIRCLE
             </h4>
             <ul className="space-y-2.5 text-xs text-neutral-600 font-sans">
-              <li><button onClick={() => onNavigate('investors')} className="hover:text-arwin-burgundy transition-colors text-left">Why Invest with Arwin</button></li>
+              <li><button onClick={() => onNavigate('golden-circle')} className="hover:text-arwin-burgundy transition-colors text-left font-semibold text-[#771722]">The Golden Circle Club</button></li>
+              <li><button onClick={() => onNavigate('investors')} className="hover:text-arwin-burgundy transition-colors text-left">Strategic Investors Desk</button></li>
               <li><button onClick={() => onNavigate('investors')} className="hover:text-arwin-burgundy transition-colors text-left">Investment Opportunities</button></li>
-              <li><button onClick={() => onNavigate('investors')} className="hover:text-arwin-burgundy transition-colors text-left">Market Insights</button></li>
-              <li><button onClick={() => onNavigate('investors')} className="hover:text-arwin-burgundy transition-colors text-left">ROI Potential</button></li>
+              <li><button onClick={() => onNavigate('investors')} className="hover:text-arwin-burgundy transition-colors text-left">Market Insights & ROI</button></li>
             </ul>
           </div>
 
