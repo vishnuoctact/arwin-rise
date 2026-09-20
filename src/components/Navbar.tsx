@@ -103,22 +103,86 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Desktop Nav Links */}
           <nav className="hidden xl:flex items-center space-x-6 2xl:space-x-8">
-            {navLinks.map((link) => (
-              <button
-                key={link.label}
-                onClick={() => handleNavClick(link.page)}
-                className={`text-[11px] font-sans font-medium tracking-[0.16em] uppercase transition-all duration-200 relative py-1 ${
-                  currentPage === link.page
-                    ? 'text-[#771722] font-semibold'
-                    : 'text-[#55504A] hover:text-[#771722]'
-                }`}
-              >
-                {link.label}
-                {currentPage === link.page && (
-                  <span className="absolute -bottom-1 left-0 w-full h-[1.6px] bg-[#C5A880]" />
-                )}
-              </button>
-            ))}
+            {navLinks.map((link) => {
+              if (link.page === 'about') {
+                return (
+                  <div 
+                    key={link.label}
+                    className="relative group py-2"
+                  >
+                    <button
+                      onClick={() => handleNavClick('about')}
+                      className={`text-[11px] font-sans font-medium tracking-[0.16em] uppercase transition-all duration-200 relative flex items-center gap-1 cursor-pointer ${
+                        currentPage === 'about' || currentPage === 'she-rise'
+                          ? 'text-[#771722] font-semibold'
+                          : 'text-[#55504A] group-hover:text-[#771722]'
+                      }`}
+                    >
+                      <span>{link.label}</span>
+                      <ChevronDown className="w-3 h-3 text-[#C5A880] transition-transform duration-200 group-hover:rotate-180" />
+                      {(currentPage === 'about' || currentPage === 'she-rise') && (
+                        <span className="absolute -bottom-1 left-0 w-full h-[1.6px] bg-[#C5A880]" />
+                      )}
+                    </button>
+
+                    {/* Dropdown Menu */}
+                    <div className="absolute top-full left-0 w-64 bg-[#FAF7F2] border border-[#C5A880]/40 shadow-2xl p-2 z-50 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 translate-y-1 group-hover:translate-y-0">
+                      <button
+                        onClick={() => handleNavClick('about')}
+                        className={`w-full text-left p-2.5 text-xs font-sans tracking-wider uppercase flex items-center justify-between transition-colors cursor-pointer ${
+                          currentPage === 'about'
+                            ? 'bg-[#771722]/10 text-[#771722] font-bold'
+                            : 'text-[#55504A] hover:bg-[#F0EBE1] hover:text-[#771722]'
+                        }`}
+                      >
+                        <div>
+                          <div className="font-semibold text-xs">Our Heritage & Leadership</div>
+                          <div className="text-[10px] text-neutral-400 capitalize font-normal tracking-normal mt-0.5">Advisory Philosophy & Track Record</div>
+                        </div>
+                        <ArrowRight className="w-3.5 h-3.5 text-[#C5A880]" />
+                      </button>
+
+                      <div className="my-1 border-t border-[#EAE3DA]" />
+
+                      <button
+                        onClick={() => handleNavClick('she-rise')}
+                        className={`w-full text-left p-2.5 text-xs font-sans tracking-wider uppercase flex items-center justify-between transition-colors cursor-pointer ${
+                          currentPage === 'she-rise'
+                            ? 'bg-[#771722]/10 text-[#771722] font-bold'
+                            : 'text-[#55504A] hover:bg-[#F0EBE1] hover:text-[#771722]'
+                        }`}
+                      >
+                        <div>
+                          <div className="font-semibold text-xs flex items-center gap-1.5 text-[#771722]">
+                            <Sparkles className="w-3.5 h-3.5 text-[#C5A880]" />
+                            <span>SHE RISE</span>
+                          </div>
+                          <div className="text-[10px] text-[#771722]/80 capitalize font-normal tracking-normal mt-0.5">Women Empowerment & Asset Wealth</div>
+                        </div>
+                        <span className="text-[9px] px-1.5 py-0.5 bg-[#771722] text-[#FAF7F2] font-bold tracking-wider">NEW</span>
+                      </button>
+                    </div>
+                  </div>
+                );
+              }
+
+              return (
+                <button
+                  key={link.label}
+                  onClick={() => handleNavClick(link.page)}
+                  className={`text-[11px] font-sans font-medium tracking-[0.16em] uppercase transition-all duration-200 relative py-1 cursor-pointer ${
+                    currentPage === link.page
+                      ? 'text-[#771722] font-semibold'
+                      : 'text-[#55504A] hover:text-[#771722]'
+                  }`}
+                >
+                  {link.label}
+                  {currentPage === link.page && (
+                    <span className="absolute -bottom-1 left-0 w-full h-[1.6px] bg-[#C5A880]" />
+                  )}
+                </button>
+              );
+            })}
           </nav>
 
           {/* Desktop Right Action CTAs */}
@@ -247,20 +311,56 @@ export const Navbar: React.FC<NavbarProps> = ({
       {mobileMenuOpen && (
         <div className="lg:hidden bg-[#FAF7F2] border-t border-[#EAE3DA] shadow-2xl px-6 py-6 space-y-4 animate-in slide-in-from-top duration-200">
           <nav className="flex flex-col space-y-1.5">
-            {navLinks.map((link) => (
-              <button
-                key={link.label}
-                onClick={() => handleNavClick(link.page)}
-                className={`text-xs font-sans tracking-widest uppercase py-2.5 px-3 rounded-none flex items-center justify-between text-left w-full transition-colors ${
-                  currentPage === link.page
-                    ? 'bg-[#771722]/10 text-[#771722] font-bold border-l-2 border-[#771722]'
-                    : 'text-[#4A4A4A] hover:bg-[#F0EBE1]'
-                }`}
-              >
-                <span>{link.label}</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#C5A880]" />
-              </button>
-            ))}
+            {navLinks.map((link) => {
+              if (link.page === 'about') {
+                return (
+                  <div key={link.label} className="space-y-1">
+                    <button
+                      onClick={() => handleNavClick('about')}
+                      className={`text-xs font-sans tracking-widest uppercase py-2.5 px-3 rounded-none flex items-center justify-between text-left w-full transition-colors cursor-pointer ${
+                        currentPage === 'about'
+                          ? 'bg-[#771722]/10 text-[#771722] font-bold border-l-2 border-[#771722]'
+                          : 'text-[#4A4A4A] hover:bg-[#F0EBE1]'
+                      }`}
+                    >
+                      <span>ABOUT US</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-[#C5A880]" />
+                    </button>
+                    
+                    {/* SHE RISE Mobile Sub-link */}
+                    <button
+                      onClick={() => handleNavClick('she-rise')}
+                      className={`text-[11px] font-sans tracking-widest uppercase py-2 pl-6 pr-3 rounded-none flex items-center justify-between text-left w-full transition-colors cursor-pointer ${
+                        currentPage === 'she-rise'
+                          ? 'bg-[#771722]/15 text-[#771722] font-bold border-l-2 border-[#771722]'
+                          : 'text-[#771722] hover:bg-[#F0EBE1]'
+                      }`}
+                    >
+                      <div className="flex items-center gap-1.5 font-medium">
+                        <Sparkles className="w-3.5 h-3.5 text-[#C5A880]" />
+                        <span>SHE RISE (WOMEN EMPOWERMENT)</span>
+                      </div>
+                      <span className="text-[9px] px-1.5 py-0.2 bg-[#771722] text-[#FAF7F2] font-bold">NEW</span>
+                    </button>
+                  </div>
+                );
+              }
+
+              return (
+                <button
+                  key={link.label}
+                  onClick={() => handleNavClick(link.page)}
+                  className={`text-xs font-sans tracking-widest uppercase py-2.5 px-3 rounded-none flex items-center justify-between text-left w-full transition-colors cursor-pointer ${
+                    currentPage === link.page
+                      ? 'bg-[#771722]/10 text-[#771722] font-bold border-l-2 border-[#771722]'
+                      : 'text-[#4A4A4A] hover:bg-[#F0EBE1]'
+                  }`}
+                >
+                  <span>{link.label}</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-[#C5A880]" />
+                </button>
+              );
+            })}
           </nav>
 
           <div className="pt-3 border-t border-[#EAE3DA] flex flex-col gap-2.5">

@@ -139,6 +139,7 @@ export const Footer: React.FC<FooterProps> = ({
             </h4>
             <ul className="space-y-2.5 text-xs text-neutral-600 font-sans">
               <li><button onClick={() => onNavigate('about')} className="hover:text-arwin-burgundy transition-colors text-left">About Us</button></li>
+              <li><button onClick={() => onNavigate('she-rise')} className="hover:text-arwin-burgundy transition-colors text-left font-semibold text-[#771722] flex items-center gap-1"><span>SHE RISE Initiative</span></button></li>
               <li><button onClick={() => onNavigate('about')} className="hover:text-arwin-burgundy transition-colors text-left">Our Vision & Values</button></li>
               <li><button onClick={() => { onNavigate('home'); setTimeout(() => { const el = document.getElementById('reviews'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }, 150); }} className="hover:text-arwin-burgundy transition-colors text-left">Client Reviews</button></li>
               <li><button onClick={() => { onNavigate('home'); setTimeout(() => { const el = document.getElementById('news'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }, 150); }} className="hover:text-arwin-burgundy transition-colors text-left">Market News & Insights</button></li>
