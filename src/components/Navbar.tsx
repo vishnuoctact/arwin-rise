@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArwinLogo } from './ArwinLogo';
-import { Menu, X, ArrowRight, User as UserIcon, Plus, Building2, LogOut, ShieldCheck, ChevronDown, Sparkles } from 'lucide-react';
+import { Menu, X, ArrowRight, User as UserIcon, Plus, Building2, LogOut, ChevronDown } from 'lucide-react';
 import { useContent } from '../context/ContentContext';
 
 interface NavbarProps {
@@ -124,41 +124,30 @@ export const Navbar: React.FC<NavbarProps> = ({
                       )}
                     </button>
 
-                    {/* Dropdown Menu */}
-                    <div className="absolute top-full left-0 w-64 bg-[#FAF7F2] border border-[#C5A880]/40 shadow-2xl p-2 z-50 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 translate-y-1 group-hover:translate-y-0">
+                    {/* Clean Dropdown Menu */}
+                    <div className="absolute top-full left-0 w-60 bg-[#FAF7F2] border border-[#EAE3DA] shadow-xl py-1.5 z-50 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200 translate-y-1 group-hover:translate-y-0">
                       <button
                         onClick={() => handleNavClick('about')}
-                        className={`w-full text-left p-2.5 text-xs font-sans tracking-wider uppercase flex items-center justify-between transition-colors cursor-pointer ${
+                        className={`w-full text-left px-4 py-2.5 text-[11px] font-sans tracking-[0.14em] uppercase transition-colors cursor-pointer ${
                           currentPage === 'about'
-                            ? 'bg-[#771722]/10 text-[#771722] font-bold'
+                            ? 'bg-[#771722]/8 text-[#771722] font-bold'
                             : 'text-[#55504A] hover:bg-[#F0EBE1] hover:text-[#771722]'
                         }`}
                       >
-                        <div>
-                          <div className="font-semibold text-xs">Our Heritage & Leadership</div>
-                          <div className="text-[10px] text-neutral-400 capitalize font-normal tracking-normal mt-0.5">Advisory Philosophy & Track Record</div>
-                        </div>
-                        <ArrowRight className="w-3.5 h-3.5 text-[#C5A880]" />
+                        Our Heritage & Leadership
                       </button>
 
-                      <div className="my-1 border-t border-[#EAE3DA]" />
+                      <div className="my-1 border-t border-[#EAE3DA]/70" />
 
                       <button
                         onClick={() => handleNavClick('she-rise')}
-                        className={`w-full text-left p-2.5 text-xs font-sans tracking-wider uppercase flex items-center justify-between transition-colors cursor-pointer ${
+                        className={`w-full text-left px-4 py-2.5 text-[11px] font-sans tracking-[0.14em] uppercase transition-colors cursor-pointer ${
                           currentPage === 'she-rise'
-                            ? 'bg-[#771722]/10 text-[#771722] font-bold'
+                            ? 'bg-[#771722]/8 text-[#771722] font-bold'
                             : 'text-[#55504A] hover:bg-[#F0EBE1] hover:text-[#771722]'
                         }`}
                       >
-                        <div>
-                          <div className="font-semibold text-xs flex items-center gap-1.5 text-[#771722]">
-                            <Sparkles className="w-3.5 h-3.5 text-[#C5A880]" />
-                            <span>SHE RISE</span>
-                          </div>
-                          <div className="text-[10px] text-[#771722]/80 capitalize font-normal tracking-normal mt-0.5">Women Empowerment & Asset Wealth</div>
-                        </div>
-                        <span className="text-[9px] px-1.5 py-0.5 bg-[#771722] text-[#FAF7F2] font-bold tracking-wider">NEW</span>
+                        SHE RISE
                       </button>
                     </div>
                   </div>
@@ -320,17 +309,14 @@ export const Navbar: React.FC<NavbarProps> = ({
                     {/* SHE RISE Mobile Sub-link */}
                     <button
                       onClick={() => handleNavClick('she-rise')}
-                      className={`text-[11px] font-sans tracking-widest uppercase py-2 pl-6 pr-3 rounded-none flex items-center justify-between text-left w-full transition-colors cursor-pointer ${
+                      className={`text-xs font-sans tracking-widest uppercase py-2 pl-6 pr-3 rounded-none flex items-center justify-between text-left w-full transition-colors cursor-pointer ${
                         currentPage === 'she-rise'
-                          ? 'bg-[#771722]/15 text-[#771722] font-bold border-l-2 border-[#771722]'
-                          : 'text-[#771722] hover:bg-[#F0EBE1]'
+                          ? 'bg-[#771722]/10 text-[#771722] font-bold border-l-2 border-[#771722]'
+                          : 'text-[#55504A] hover:bg-[#F0EBE1] hover:text-[#771722]'
                       }`}
                     >
-                      <div className="flex items-center gap-1.5 font-medium">
-                        <Sparkles className="w-3.5 h-3.5 text-[#C5A880]" />
-                        <span>SHE RISE (WOMEN EMPOWERMENT)</span>
-                      </div>
-                      <span className="text-[9px] px-1.5 py-0.2 bg-[#771722] text-[#FAF7F2] font-bold">NEW</span>
+                      <span>SHE RISE</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-[#C5A880]" />
                     </button>
                   </div>
                 );
