@@ -1,7 +1,8 @@
 import React from 'react';
 import { PageHero } from '../components/PageHero';
 import { STATS as DEFAULT_STATS } from '../data/properties';
-import { ShieldCheck, Award, Heart, CheckCircle2, Sparkles, Building2, Compass, Leaf, ArrowRight } from 'lucide-react';
+import { ShieldCheck, Award, Building2, Compass, Leaf, ArrowRight, MessageCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { useContent } from '../context/ContentContext';
 
 interface AboutPageProps {
@@ -13,7 +14,7 @@ const FALLBACK_PILLARS = [
   {
     id: 'p-1',
     title: 'Radical Transparency',
-    desc: '100% RERA registered developments, unblemished title ownership trails, and zero hidden escalation clauses.'
+    desc: '100% RERA registered developments, unblemished 30+ year title ownership trails, and zero hidden escalation clauses.'
   },
   {
     id: 'p-2',
@@ -36,28 +37,17 @@ export const AboutPage: React.FC<AboutPageProps> = ({
   onRequestPreview,
   onNavigateHome
 }) => {
-  const { aboutPage, stats } = useContent();
+  const { aboutPage, stats, settings } = useContent();
 
-  const heroTag = aboutPage?.heroTag || "OUR STORY & PHILOSOPHY · LIFE STARTS HERE";
+  const heroTag = aboutPage?.heroTag || "OUR HERITAGE & LEADERSHIP · LIFE STARTS HERE";
   const heroTitle = aboutPage?.heroTitle || "Built on Values. Driven by Relationships.";
-  const heroSubtitle = aboutPage?.heroSubtitle || "For over a decade, ARWIN RISE has guided luxury homebuyers and global NRI investors with uncompromising integrity and bespoke property advisory.";
-
-  const philosophyTag = aboutPage?.philosophyTag || "OUR ADVISORY PHILOSOPHY";
-  const philosophyHeadline = aboutPage?.philosophyHeadline || "“Real estate is not just about properties—it's about people, possibilities, and where your next chapter begins. Life Starts Here.”";
-  const philosophyParagraphs = aboutPage?.philosophyParagraphs || [
-    "When we established ARWIN RISE, our core commitment was simple: to create a trusted advisory standard that stands as an enduring pillar for homebuyers and wealth creators. Every transaction and portfolio we curate is guided by uncompromising due diligence and deep fiduciary commitment.",
-    "With over ₹4,500 Cr+ in advised luxury portfolio, 12+ years of market mastery, and 350+ elite families guided across India and the UAE, ARWIN RISE delivers high appreciation assets and end-to-end peace of mind."
-  ];
-  const philosophyImage = aboutPage?.philosophyImage || "/images/by-invitation.jpg";
-
-  const advisoryName = aboutPage?.advisoryName || "Arwin Advisory Desk";
-  const advisoryDesk = aboutPage?.advisoryDesk || "PRIVATE CLIENT GROUP";
-  const advisoryLocation = aboutPage?.advisoryLocation || "Neopolis, Hyderabad · International Wealth Desk";
+  const heroSubtitle = aboutPage?.heroSubtitle || "For over a decade, ARWIN RISE has guided luxury homebuyers, HNIs, and global NRI investors with uncompromising fiduciary integrity and bespoke property advisory.";
 
   const pillarsTag = aboutPage?.pillarsTag || "OUR FOUNDATION";
   const pillarsTitle = aboutPage?.pillarsTitle || "Four Pillars of Advisory Excellence";
   const pillars = aboutPage?.pillars?.length ? aboutPage.pillars : FALLBACK_PILLARS;
   const currentStats = stats?.length ? stats : DEFAULT_STATS;
+  const whatsappPhone = settings?.whatsappPhone || "918464954321";
 
   const pillarIcons = [ShieldCheck, Compass, Leaf, Award];
 
@@ -68,13 +58,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({
         tag={heroTag}
         title={heroTitle}
         subtitle={heroSubtitle}
-        breadcrumbs={['About Us']}
+        breadcrumbs={['About Us', 'Our Heritage & Leadership']}
         onNavigateHome={onNavigateHome}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16 lg:py-20 space-y-16 lg:space-y-20">
         
-        {/* Milestone Stats Bar in Royal Burgundy */}
+        {/* Milestone Stats Bar */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 bg-white border border-[#EAE3DA] p-7 sm:p-10 shadow-sm">
           {currentStats.map((stat, idx) => (
             <div key={idx} className="space-y-1.5 border-r border-[#EAE3DA] last:border-r-0 pl-2 sm:pl-4">
@@ -88,78 +78,135 @@ export const AboutPage: React.FC<AboutPageProps> = ({
           ))}
         </div>
 
-        {/* Corporate Advisory Heritage & Vision Spotlight */}
-        <div className="bg-white border border-[#EAE3DA] p-8 sm:p-14 shadow-sm">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        {/* ============================================================ */}
+        {/* FOUNDER & LEADERSHIP SPOTLIGHT */}
+        {/* ============================================================ */}
+        <div className="bg-white border border-[#EAE3DA] p-8 sm:p-12 lg:p-14 shadow-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             
-            {/* Brand Architectural Cover */}
-            <div className="lg:col-span-5 flex justify-center lg:justify-start">
-              <div className="relative max-w-sm w-full overflow-hidden border-2 border-[#EAE3DA] shadow-xl group">
+            {/* Left: Founder Portrait with ARWIN RISE Stamp */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.96 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="lg:col-span-5 flex justify-center"
+            >
+              <div className="relative w-full max-w-sm aspect-[4/5] overflow-hidden bg-[#FAF7F2] shadow-2xl border-2 border-[#EAE3DA] group">
                 <img
-                  src={philosophyImage}
-                  alt="Arwin Rise Private Living"
-                  className="w-full aspect-[3/4] object-cover object-center filter brightness-[1.01] contrast-[1.02]"
+                  src="/images/founder-pro.jpg"
+                  alt="Kamal Yellapragada - Founder & Managing Director, ARWIN RISE"
+                  className="w-full h-full object-cover object-top filter brightness-[1.01] transition-transform duration-700 group-hover:scale-103"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = '/images/founder.jpg';
+                  }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#7A1522]/35 via-transparent to-transparent pointer-events-none"></div>
-                <div className="absolute bottom-3.5 left-3.5 bg-[#771722] text-[#C5A880] px-4 py-1.5 text-[11px] font-sans font-bold tracking-widest uppercase shadow-md">
-                  PRIVATE PROPERTY ADVISORY
+                <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />
+                
+                {/* Discrete ARWIN RISE Stamp */}
+                <div className="absolute bottom-3.5 left-3.5 bg-[#771722] text-[#FAF7F2] px-3.5 py-1 text-[10px] font-sans font-bold tracking-[0.2em] uppercase shadow-md">
+                  ARWIN RISE
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            {/* Vision Message */}
-            <div className="lg:col-span-7 space-y-6">
-              <div className="text-xs font-sans font-bold tracking-[0.24em] text-[#C5A880] uppercase">
-                {philosophyTag}
-              </div>
-              <h2 className="font-serif text-3xl sm:text-4xl text-[#222222] font-normal leading-snug">
-                {philosophyHeadline}
-              </h2>
-              <div className="w-14 h-[2px] bg-[#C5A880]"></div>
-              
-              <div className="space-y-4 text-sm sm:text-[15px] text-[#55504A] font-sans leading-relaxed">
-                {philosophyParagraphs.map((para, pIndex) => (
-                  <p key={pIndex}>{para}</p>
-                ))}
+            {/* Right: Founder Profile & Philosophy Narrative */}
+            <motion.div 
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="lg:col-span-7 space-y-6"
+            >
+              {/* Overline Badge */}
+              <div className="flex items-center gap-2">
+                <span className="w-5 h-[1.5px] bg-[#771722]" />
+                <span className="text-[11.5px] font-sans font-bold tracking-[0.22em] text-[#771722] uppercase">
+                  LEADERSHIP & FOUNDER PHILOSOPHY
+                </span>
               </div>
 
-              {/* Advisory Board Signoff */}
-              <div className="pt-5 border-t border-[#EAE3DA] flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+              {/* Title & Role */}
+              <div className="space-y-1">
+                <h2 className="font-serif text-3xl sm:text-4xl text-[#141210] font-normal leading-tight">
+                  Kamal Yellapragada
+                </h2>
+                <div className="text-xs sm:text-[13px] font-sans font-bold text-[#771722] uppercase tracking-[0.16em]">
+                  FOUNDER & MANAGING DIRECTOR
+                </div>
+                <div className="text-xs sm:text-[13px] font-sans text-neutral-500 font-light">
+                  Property Expert & NRI Portfolio Manager · Business Coach
+                </div>
+              </div>
+
+              {/* Quote */}
+              <div className="p-4 bg-[#FAF7F2] border-l-2 border-[#C5A880]">
+                <blockquote className="font-serif text-base sm:text-[17px] text-[#222222] italic font-normal leading-relaxed">
+                  “Real estate is not just about properties—it's about people, possibilities, and where your next chapter begins. Life Starts Here.”
+                </blockquote>
+              </div>
+
+              {/* Founder Narrative */}
+              <div className="space-y-3.5 text-sm sm:text-[15px] text-[#55504A] font-sans leading-relaxed font-light">
+                <p>
+                  When establishing ARWIN RISE, our core mandate was straightforward: to replace traditional broker friction with institutional-grade, fiduciary advisory. Every property we represent undergoes exhaustive 30+ year legal forensics, title verification, and valuation modeling before reaching our patrons.
+                </p>
+                <p>
+                  Whether curating ultra-luxury sky villas in Neopolis, bespoke farm retreats in Shankarpally, or strategic overseas allocations in Dubai, our commitment remains absolute: safeguarding our patrons' wealth and unlocking enduring generational appreciation.
+                </p>
+              </div>
+
+              {/* Signature Block & Action CTAs */}
+              <div className="pt-4 border-t border-[#EAE3DA] flex flex-col sm:flex-row sm:items-center justify-between gap-5">
                 <div className="space-y-1">
-                  <div className="font-serif text-2xl text-[#222222] font-medium">
-                    {advisoryName}
+                  <div className="font-signature text-3xl sm:text-4xl text-[#C5A880] font-normal leading-tight select-none">
+                    Kamal Yellapragada
                   </div>
-                  <div className="text-xs font-sans font-bold text-[#771722] uppercase tracking-wider">
-                    {advisoryDesk}
-                  </div>
-                  <div className="text-xs sm:text-[13px] font-sans text-[#55504A]">
-                    {advisoryLocation}
+                  <div className="text-[11px] font-sans text-neutral-400 uppercase tracking-widest">
+                    FOUNDER'S DESK · HYDERABAD & DUBAI
                   </div>
                 </div>
 
-                <button
-                  onClick={onRequestPreview}
-                  className="inline-flex items-center gap-2.5 bg-[#771722] hover:bg-[#8E1E2C] text-white px-6 py-3.5 text-xs font-sans font-bold tracking-widest uppercase transition-colors shadow-md self-start sm:self-auto cursor-pointer"
-                >
-                  <span>REQUEST ADVISORY</span>
-                  <ArrowRight className="w-4 h-4 text-[#C5A880]" />
-                </button>
+                <div className="flex flex-wrap items-center gap-3">
+                  <button
+                    onClick={onRequestPreview}
+                    className="inline-flex items-center gap-2 bg-[#771722] hover:bg-[#8E1E2C] text-white px-5 py-3 text-xs font-sans font-bold tracking-widest uppercase transition-colors shadow-md cursor-pointer"
+                  >
+                    <span>REQUEST ADVISORY</span>
+                    <ArrowRight className="w-3.5 h-3.5 text-[#C5A880]" />
+                  </button>
+
+                  <a
+                    href={`https://wa.me/${whatsappPhone}?text=Hello%20Kamal%20Yellapragada%2C%20I%20would%20like%20to%20request%20a%20private%20property%20advisory%20consultation.`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 border border-[#EAE3DA] hover:border-[#771722] text-[#222222] bg-white px-4 py-3 text-xs font-sans font-semibold tracking-wider uppercase transition-colors cursor-pointer"
+                  >
+                    <MessageCircle className="w-3.5 h-3.5 text-[#771722]" />
+                    <span>WHATSAPP DESK</span>
+                  </a>
+                </div>
               </div>
 
-            </div>
+            </motion.div>
 
           </div>
         </div>
 
-        {/* 4 Core Pillars */}
-        <div className="pt-16 sm:pt-24 border-t border-[#EAE3DA] space-y-12">
+        {/* ============================================================ */}
+        {/* 4 CORE PILLARS OF ADVISORY EXCELLENCE */}
+        {/* ============================================================ */}
+        <div className="pt-8 border-t border-[#EAE3DA] space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-2.5">
-            <div className="text-xs font-sans font-bold tracking-[0.24em] text-[#C5A880] uppercase">
-              {pillarsTag}
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#771722]/10 text-[#771722] text-[10px] font-sans font-bold tracking-[0.24em] uppercase">
+              <span>{pillarsTag}</span>
             </div>
             <h3 className="font-serif text-3xl sm:text-4xl text-[#222222] font-normal">
               {pillarsTitle}
             </h3>
+            <p className="text-xs sm:text-sm font-sans text-[#666058] leading-relaxed">
+              Every portfolio recommendation and bespoke transaction is anchored in our four foundational pillars.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -171,10 +218,36 @@ export const AboutPage: React.FC<AboutPageProps> = ({
                     <IconComp className="w-7 h-7 text-[#771722]" />
                   </div>
                   <h4 className="font-serif text-xl text-[#222222]">{pillar.title}</h4>
-                  <p className="text-xs sm:text-[13.5px] text-[#55504A] font-sans leading-relaxed">{pillar.desc}</p>
+                  <p className="text-xs sm:text-[13.5px] text-[#55504A] font-sans leading-relaxed font-light">{pillar.desc}</p>
                 </div>
               );
             })}
+          </div>
+        </div>
+
+        {/* ============================================================ */}
+        {/* PRIVATE BRIEFING ADVISORY BANNER */}
+        {/* ============================================================ */}
+        <div className="bg-[#141210] text-[#FAF7F2] p-8 sm:p-12 border border-[#C5A880]/30 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="space-y-2 text-center lg:text-left max-w-2xl">
+            <div className="text-[10px] font-sans font-bold tracking-[0.24em] text-[#C5A880] uppercase">
+              CONFIDENTIAL PORTFOLIO REVIEW
+            </div>
+            <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal">
+              Schedule a 1-on-1 Consultation with Managing Leadership
+            </h3>
+            <p className="text-xs sm:text-sm text-neutral-300 font-sans font-light leading-relaxed">
+              Discuss micro-market investment trends, off-market opportunities, or portfolio restructuring with absolute privacy.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-3">
+            <button
+              onClick={onRequestPreview}
+              className="bg-[#C5A880] hover:bg-[#D4B993] text-[#141210] font-sans font-bold px-7 py-3.5 text-xs tracking-[0.16em] uppercase transition-all shadow-md cursor-pointer"
+            >
+              BOOK PRIVATE STRATEGY CALL
+            </button>
           </div>
         </div>
 
