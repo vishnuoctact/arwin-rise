@@ -3,6 +3,7 @@ import { Hero } from '../components/Hero';
 import { ValueProps } from '../components/ValueProps';
 import { CollectionSection } from '../components/CollectionSection';
 import { ServicesAndTestimonials } from '../components/ServicesAndTestimonials';
+import { TrustSection } from '../components/TrustSection';
 import { ReviewsSection } from '../components/ReviewsSection';
 import { PostLuxuryPropertyBanner } from '../components/PostLuxuryPropertyBanner';
 import { PartnerWithUsBanner } from '../components/PartnerWithUsBanner';
@@ -74,6 +75,9 @@ export const HomePage: React.FC<HomePageProps> = ({
         onInvestorClick={() => onNavigatePage('investors')}
         onRequestPreview={onRequestPreview}
       />
+
+      {/* Leadership & Advisory (Founder Section) */}
+      <TrustSection />
 
       {/* Verified Client Reviews & Endorsements */}
       <ReviewsSection
