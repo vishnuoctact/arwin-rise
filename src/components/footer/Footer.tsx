@@ -171,13 +171,13 @@ export const Footer: React.FC<FooterProps> = ({
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-[#A67547] flex-shrink-0 mt-0.5" />
                 <span className="leading-snug">
-                  Neopolis, Hyderabad
+                  Plot No 102, HMT Swarnapuri Colony, Miyapur, Ranga Reddy, Telangana, 500050
                 </span>
               </div>
               <div className="flex items-center gap-2">
                 <MessageCircle className="w-4 h-4 text-[#A67547] flex-shrink-0" />
                 <a 
-                  href="https://wa.me/918464954321?text=Hello%20Arwin%20Rise%20Concierge,%20I%20would%20like%20to%20connect%20with%20an%20Advisor." 
+                  href="https://wa.me/918464955321?text=Hello%20Arwin%20Rise%20Concierge,%20I%20would%20like%20to%20connect%20with%20an%20Advisor." 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="hover:text-white transition-colors"

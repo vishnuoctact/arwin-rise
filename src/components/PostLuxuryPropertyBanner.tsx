@@ -30,7 +30,7 @@ export const PostLuxuryPropertyBanner: React.FC<PostLuxuryPropertyBannerProps> =
   const whatsappCtaText = sellerDesk?.whatsappCtaText || "WHATSAPP SELLER DESK";
   const whatsappMessage = sellerDesk?.whatsappMessage || "Hello Arwin Rise Seller Desk, I would like to list my Grade-A luxury property for private advisory.";
   const footnote = sellerDesk?.footnote || "* Note: We only take up Grade-A luxury residences worth ₹1.5 Crore and above.";
-  const whatsappPhone = settings?.whatsappPhone || "918464954321";
+  const whatsappPhone = settings?.whatsappPhone || "918464955321";
 
   return (
     <section id="post-property" className="py-14 sm:py-16 lg:py-20 bg-[#FAF7F2] border-t border-[#EAE3DA] relative overflow-hidden">

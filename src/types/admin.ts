@@ -21,8 +21,11 @@ export interface SiteSettings {
   reraNumberHyderabad: string;
   reraNumberDubai: string;
   instagramUrl: string;
+  facebookUrl?: string;
   linkedinUrl: string;
   youtubeUrl: string;
+  companyDivision?: string;
+  gstNumber?: string;
   metaTitle: string;
   metaDescription: string;
   

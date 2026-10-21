@@ -598,7 +598,7 @@ export const ListPropertyModal: React.FC<ListPropertyModalProps> = ({
                   )}
 
                   <a
-                    href={`https://wa.me/918464954321?text=Hello%20Arwin%20Rise%20Asset%20Desk,%20I%20have%20submitted%20my%20luxury%20property%20for%20review%20(Docket:%20${listingDocketId}).%20Property:%20${encodeURIComponent(formData.propertyTitle)}`}
+                    href={`https://wa.me/918464955321?text=Hello%20Arwin%20Rise%20Asset%20Desk,%20I%20have%20submitted%20my%20luxury%20property%20for%20review%20(Docket:%20${listingDocketId}).%20Property:%20${encodeURIComponent(formData.propertyTitle)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full flex items-center justify-center gap-2 bg-[#771722] hover:bg-[#8E1E2C] text-white py-3 px-4 rounded-lg text-xs font-semibold tracking-widest uppercase transition-colors shadow-sm"

@@ -89,7 +89,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
                   
                   {/* Phone Hotline */}
                   <a 
-                    href={`tel:${settings.displayPhone || '+918464954321'}`}
+                    href={`tel:${settings.displayPhone || '+918464955321'}`}
                     className="py-4 flex items-start gap-3.5 group transition-colors block"
                   >
                     <div className="w-9 h-9 rounded-full bg-[#771722]/10 text-[#771722] group-hover:bg-[#771722] group-hover:text-white flex items-center justify-center flex-shrink-0 mt-0.5 transition-colors">
@@ -100,7 +100,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
                         DIRECT ADVISORY HOTLINE
                       </div>
                       <div className="font-serif text-lg text-[#222222] group-hover:text-[#771722] transition-colors leading-tight mt-0.5">
-                        {settings.displayPhone || '+91 84649 54321'}
+                        {settings.displayPhone || '+91 84649 55321'}
                       </div>
                       <div className="text-[11px] text-neutral-500 font-sans mt-0.5">
                         Direct Access to Senior Concierge & Advisory Desk
@@ -110,7 +110,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
 
                   {/* WhatsApp Channel */}
                   <a 
-                    href={`https://wa.me/${settings.whatsappPhone || '918464954321'}`}
+                    href={`https://wa.me/${settings.whatsappPhone || '918464955321'}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="py-4 flex items-start gap-3.5 group transition-colors block"
@@ -123,7 +123,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
                         GLOBAL WHATSAPP DESK
                       </div>
                       <div className="font-serif text-lg text-[#222222] group-hover:text-[#771722] transition-colors leading-tight mt-0.5">
-                        +{settings.whatsappPhone || '91 84649 54321'}
+                        +{settings.whatsappPhone || '91 84649 55321'}
                       </div>
                       <div className="text-[11px] text-neutral-500 font-sans mt-0.5">
                         Instant portfolio brochures & 4K video walkthroughs
@@ -162,7 +162,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
                   <span>Advisory Office</span>
                 </div>
                 <div className="font-serif text-sm text-[#222222] font-normal leading-snug">
-                  {settings.officeAddressHyderabad || 'Neopolis, HITEC City, Hyderabad'}
+                  {settings.officeAddressHyderabad || 'Plot No 102, HMT Swarnapuri Colony, Miyapur, Ranga Reddy, Telangana, 500050'}
                 </div>
                 <div className="flex items-center gap-1.5 text-[11px] text-neutral-500 font-sans pt-0.5">
                   <Clock className="w-3 h-3 text-[#C5A880]" />
@@ -217,7 +217,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigateHome }) => {
                           required
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          placeholder="+91 84649 54321"
+                          placeholder="+91 84649 55321"
                           className="w-full px-3.5 py-2.5 bg-[#FAF7F2] border border-[#EAE3DA] text-xs text-[#222222] focus:outline-none focus:border-[#C5A880]"
                         />
                       </div>

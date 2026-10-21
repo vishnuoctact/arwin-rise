@@ -180,20 +180,21 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
         'url': baseUrl,
         'logo': `${baseUrl}${settings.logoDarkUrl || '/images/arwin-rise-lockup.png'}`,
         'description': seoSettings.siteDescription,
-        'telephone': settings.primaryPhone || '+91 84649 54321',
+        'telephone': settings.primaryPhone || '+91 84649 55321',
         'email': settings.publicContactEmail || 'concierge@arwinrise.com',
         'priceRange': seoSettings.priceRange || '₹1.5 Cr – ₹35 Cr+',
         'address': {
           '@type': 'PostalAddress',
-          'streetAddress': seoSettings.streetAddress || 'Level 14, Galaxy Towers, Knowledge City, HITEC City',
-          'addressLocality': seoSettings.addressLocality || 'Hyderabad',
+          'streetAddress': seoSettings.streetAddress || 'Plot No 102, HMT Swarnapuri Colony, Miyapur, Ranga Reddy',
+          'addressLocality': seoSettings.addressLocality || 'Miyapur, Hyderabad',
           'addressRegion': seoSettings.addressRegion || 'Telangana',
-          'postalCode': seoSettings.postalCode || '500081',
+          'postalCode': seoSettings.postalCode || '500050',
           'addressCountry': seoSettings.addressCountry || 'IN'
         },
         'openingHours': seoSettings.openingHours || 'Mo-Sa 09:00-19:00',
         'sameAs': [
           settings.instagramUrl,
+          settings.facebookUrl,
           settings.linkedinUrl,
           settings.youtubeUrl
         ].filter(Boolean)

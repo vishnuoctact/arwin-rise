@@ -141,7 +141,7 @@ export const NewsArticlePage: React.FC<NewsArticlePageProps> = ({
               Require tailored micro-market forecasts for your next acquisition?
             </h3>
             <p className="text-xs text-neutral-500 font-sans">
-              WhatsApp Advisory: <a href="https://wa.me/918464954321?text=Hello%20Arwin%20Rise,%20I%20would%20like%20to%20request%20an%20advisory%20briefing." target="_blank" rel="noopener noreferrer" className="font-bold text-[#771722] hover:underline">Chat on WhatsApp →</a> · Neopolis, Hyderabad
+              WhatsApp Advisory: <a href="https://wa.me/918464955321?text=Hello%20Arwin%20Rise,%20I%20would%20like%20to%20request%20an%20advisory%20briefing." target="_blank" rel="noopener noreferrer" className="font-bold text-[#771722] hover:underline">Chat on WhatsApp →</a> · Hyderabad
             </p>
           </div>
 

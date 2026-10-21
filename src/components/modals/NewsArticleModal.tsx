@@ -129,7 +129,7 @@ export const NewsArticleModal: React.FC<NewsArticleModalProps> = ({
                 Require personalized analysis for your acquisition?
               </div>
               <div className="text-xs text-neutral-500 font-sans mt-0.5">
-                WhatsApp Advisory: <a href="https://wa.me/918464954321?text=Hello%20Arwin%20Rise,%20I%20would%20like%20to%20request%20an%20advisory%20briefing." target="_blank" rel="noopener noreferrer" className="font-bold text-[#771722] hover:underline">Chat on WhatsApp →</a> · Neopolis, Hyderabad
+                WhatsApp Advisory: <a href="https://wa.me/918464955321?text=Hello%20Arwin%20Rise,%20I%20would%20like%20to%20request%20an%20advisory%20briefing." target="_blank" rel="noopener noreferrer" className="font-bold text-[#771722] hover:underline">Chat on WhatsApp →</a> · Hyderabad
               </div>
             </div>
 

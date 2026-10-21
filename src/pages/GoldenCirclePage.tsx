@@ -530,7 +530,7 @@ export const GoldenCirclePage: React.FC<GoldenCirclePageProps> = ({
 
           <div className="flex items-center gap-3 flex-shrink-0">
             <a
-              href="https://wa.me/918464954321?text=Hello%20Arwin%20Rise%2C%20I%20would%20like%20to%20inquire%20about%20The%20Golden%20Circle%20Investor%20Syndicate."
+              href="https://wa.me/918464955321?text=Hello%20Arwin%20Rise%2C%20I%20would%20like%20to%20inquire%20about%20The%20Golden%20Circle%20Investor%20Syndicate."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#771722] hover:bg-[#8E1E2C] text-white px-5 py-3 text-xs font-sans font-bold tracking-wider uppercase transition-all shadow-xs cursor-pointer"

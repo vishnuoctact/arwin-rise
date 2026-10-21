@@ -256,7 +256,7 @@ export const CareerApplyModal: React.FC<CareerApplyModalProps> = ({ isOpen, onCl
                 </button>
 
                 <p className="text-[10px] text-center text-[#888075] font-sans">
-                  WhatsApp Hiring Desk: <a href="https://wa.me/918464954321?text=Hello%20Arwin%20Rise%20Hiring%20Desk,%20I%20have%20a%20question%20regarding%20career%20opportunities." target="_blank" rel="noopener noreferrer" className="text-[#771722] font-bold hover:underline">Chat on WhatsApp →</a>
+                  WhatsApp Hiring Desk: <a href="https://wa.me/918464955321?text=Hello%20Arwin%20Rise%20Hiring%20Desk,%20I%20have%20a%20question%20regarding%20career%20opportunities." target="_blank" rel="noopener noreferrer" className="text-[#771722] font-bold hover:underline">Chat on WhatsApp →</a>
                 </p>
               </form>
             </>
@@ -296,7 +296,7 @@ export const CareerApplyModal: React.FC<CareerApplyModalProps> = ({ isOpen, onCl
               {/* Fast Track on WhatsApp */}
               <div className="pt-2 max-w-sm mx-auto space-y-2.5">
                 <a
-                  href={`https://wa.me/918464954321?text=Hello%20Arwin%20Rise%20Hiring%20Desk,%20I%20have%20submitted%20my%20career%20application%20(Ref:%20${appId}).%20Name:%20${encodeURIComponent(formData.fullName)}`}
+                  href={`https://wa.me/918464955321?text=Hello%20Arwin%20Rise%20Hiring%20Desk,%20I%20have%20submitted%20my%20career%20application%20(Ref:%20${appId}).%20Name:%20${encodeURIComponent(formData.fullName)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center gap-2 bg-[#771722] hover:bg-[#8E1E2C] text-white py-3 px-4 text-xs font-sans font-bold tracking-widest uppercase transition-colors shadow-sm"

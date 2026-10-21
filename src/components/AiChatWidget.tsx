@@ -336,7 +336,7 @@ export const AiChatWidget: React.FC<AiChatWidgetProps> = ({
         action: {
           type: 'whatsapp',
           label: 'CONNECT WITH DUBAI DESK ON WHATSAPP',
-          payload: 'https://wa.me/918464954321?text=Hello%20Arwin%20Rise,%20I%20am%20interested%20in%20the%20Dubai%20Private%20Collection%20and%20UAE%20Golden%20Visa%20advisory.'
+          payload: 'https://wa.me/918464955321?text=Hello%20Arwin%20Rise,%20I%20am%20interested%20in%20the%20Dubai%20Private%20Collection%20and%20UAE%20Golden%20Visa%20advisory.'
         }
       };
     }
@@ -426,7 +426,7 @@ export const AiChatWidget: React.FC<AiChatWidgetProps> = ({
         action: {
           type: 'whatsapp',
           label: 'SCHEDULE PRIVATE VILLA TOUR',
-          payload: 'https://wa.me/918464954321?text=Hello%20Arwin%20Rise,%20I%20would%20like%20to%20schedule%20a%20private%20tour%20for%20your%20villa%20projects.'
+          payload: 'https://wa.me/918464955321?text=Hello%20Arwin%20Rise,%20I%20would%20like%20to%20schedule%20a%20private%20tour%20for%20your%20villa%20projects.'
         }
       };
     }
@@ -437,7 +437,7 @@ export const AiChatWidget: React.FC<AiChatWidgetProps> = ({
         action: {
           type: 'whatsapp',
           label: 'CHAT WITH LAND ADVISORY DESK',
-          payload: 'https://wa.me/918464954321?text=Hello%20Arwin%20Rise,%20I%20am%20interested%20in%20plotted%20developments%20and%20land%20assets.'
+          payload: 'https://wa.me/918464955321?text=Hello%20Arwin%20Rise,%20I%20am%20interested%20in%20plotted%20developments%20and%20land%20assets.'
         }
       };
     }
@@ -612,11 +612,11 @@ export const AiChatWidget: React.FC<AiChatWidgetProps> = ({
 
     if (q.includes('office') || q.includes('location') || q.includes('address') || q.includes('visit') || q.includes('where') || q.includes('contact') || q.includes('phone') || q.includes('number') || q.includes('whatsapp') || q.includes('email')) {
       return {
-        text: `📍 ARWIN RISE Private Advisory Office:\n\n• Address: Neopolis, Hyderabad, Telangana, India\n• Office Hours: Monday – Sunday: 10:00 AM – 7:30 PM (IST)\n• Advisory Hotline: +91 84649 54321\n• Global WhatsApp Desk: +91 84649 54321\n• Official Email: concierge@arwinrise.com\n\nWould you like to schedule an in-person meeting or request a direct callback?`,
+        text: `📍 ARWIN RISE Private Advisory Office:\n\n• Address: Plot No 102, HMT Swarnapuri Colony, Miyapur, Ranga Reddy, Telangana, 500050\n• Office Hours: Monday – Sunday: 10:00 AM – 7:30 PM (IST)\n• Advisory Hotline: +91 84649 55321\n• Global WhatsApp Desk: +91 84649 55321\n• Official Email: concierge@arwinrise.com\n\nWould you like to schedule an in-person meeting or request a direct callback?`,
         action: {
           type: 'whatsapp',
           label: 'SCHEDULE ADVISORY OFFICE VISIT',
-          payload: 'https://wa.me/918464954321?text=Hello%20Arwin%20Rise,%20I%20would%20like%20to%20schedule%20an%20in-person%20meeting%20at%20your%20Neopolis%20office.'
+          payload: 'https://wa.me/918464955321?text=Hello%20Arwin%20Rise,%20I%20would%20like%20to%20schedule%20an%20in-person%20meeting%20at%20your%20office.'
         }
       };
     }
@@ -669,8 +669,8 @@ export const AiChatWidget: React.FC<AiChatWidgetProps> = ({
       text: `Regarding "${query}": Our advisory desk specializes in high-ticket residences across Hyderabad (Neopolis, Kokapet, Kukatpally, Shankarpally, Mokila, Financial District), Dubai Waterfront penthouses, and strategic career partnerships.\n\nWould you like us to share curated brochures, floor plans, or connect you directly with Senior Managing Leadership?`,
       action: {
         type: 'whatsapp',
-        label: 'CONNECT ON WHATSAPP (+91 84649 54321)',
-        payload: `https://wa.me/918464954321?text=Hello%20Arwin%20Rise%20Advisory,%20I%20would%20like%20specific%20details%20regarding:%20${encodeURIComponent(query)}`
+        label: 'CONNECT ON WHATSAPP (+91 84649 55321)',
+        payload: `https://wa.me/918464955321?text=Hello%20Arwin%20Rise%20Advisory,%20I%20would%20like%20specific%20details%20regarding:%20${encodeURIComponent(query)}`
       }
     };
   };
@@ -745,7 +745,7 @@ export const AiChatWidget: React.FC<AiChatWidgetProps> = ({
         if (action.payload) {
           window.open(action.payload, '_blank');
         } else {
-          window.open('https://wa.me/918464954321?text=Hello%20Arwin%20Rise%20Advisory%20Desk,%20I%20am%20interested%20in%20your%20luxury%20properties.', '_blank');
+          window.open('https://wa.me/918464955321?text=Hello%20Arwin%20Rise%20Advisory%20Desk,%20I%20am%20interested%20in%20your%20luxury%20properties.', '_blank');
         }
         break;
       case 'preview':
@@ -931,12 +931,12 @@ export const AiChatWidget: React.FC<AiChatWidgetProps> = ({
             <div className="px-3 py-1.5 bg-[#FAF7F2] border-t border-[#EAE3DA] flex items-center justify-between text-[10.5px] font-sans text-neutral-500 flex-shrink-0">
               <span className="text-[10px] sm:text-[10.5px] text-[#777068]">Need human advisory?</span>
               <a
-                href="https://wa.me/918464954321?text=Hello%20Arwin%20Rise%20Advisory%20Desk,%20I%20would%20like%20to%20connect%20with%20a%20Senior%20Advisor."
+                href="https://wa.me/918464955321?text=Hello%20Arwin%20Rise%20Advisory%20Desk,%20I%20would%20like%20to%20connect%20with%20a%20Senior%20Advisor."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#771722] hover:text-[#8E1E2C] font-bold text-[10px] sm:text-[10.5px] tracking-wide inline-flex items-center gap-1"
               >
-                <span>WhatsApp Desk (+91 84649 54321)</span>
+                <span>WhatsApp Desk (+91 84649 55321)</span>
                 <ChevronRight className="w-3 h-3" />
               </a>
             </div>

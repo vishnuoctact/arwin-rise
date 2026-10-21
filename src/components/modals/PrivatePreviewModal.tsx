@@ -139,7 +139,7 @@ export const PrivatePreviewModal: React.FC<PrivatePreviewModalProps> = ({ isOpen
                       required
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      placeholder="+91 84649 54321"
+                      placeholder="+91 84649 55321"
                       className="w-full px-3.5 py-2.5 bg-white border border-[#EAE3DA] text-xs focus:outline-none focus:border-[#C5A880] text-[#222222] placeholder-neutral-400 rounded-none transition-colors"
                     />
                   </div>

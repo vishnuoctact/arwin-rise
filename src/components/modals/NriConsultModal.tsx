@@ -156,7 +156,7 @@ export const NriConsultModal: React.FC<NriConsultModalProps> = ({ isOpen, onClos
               </span>
               <span>
                 <a 
-                  href="https://wa.me/918464954321?text=Hello%20Arwin%20Rise%20NRI%20Desk,%20I%20am%20interested%20in%20NRI%20investment%20advisory." 
+                  href="https://wa.me/918464955321?text=Hello%20Arwin%20Rise%20NRI%20Desk,%20I%20am%20interested%20in%20NRI%20investment%20advisory." 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="font-bold text-[#771722] hover:underline"

@@ -33,10 +33,10 @@ Sitemap: https://arwinrise.com/sitemap.xml`,
   businessType: "RealEstateAgent",
   priceRange: "₹1.5 Cr – ₹35 Cr+",
   openingHours: "Mo-Sa 09:00-19:00",
-  streetAddress: "Level 14, Galaxy Towers, Knowledge City, HITEC City",
-  addressLocality: "Hyderabad",
+  streetAddress: "Plot No 102, HMT Swarnapuri Colony, Miyapur, Ranga Reddy",
+  addressLocality: "Miyapur, Hyderabad",
   addressRegion: "Telangana",
-  postalCode: "500081",
+  postalCode: "500050",
   addressCountry: "IN",
   geoLatitude: "17.4375",
   geoLongitude: "78.3781",
@@ -101,7 +101,7 @@ Sitemap: https://arwinrise.com/sitemap.xml`,
     },
     contact: {
       title: "Private Client Concierge & Locations | ARWIN RISE",
-      description: "Connect directly with our Private Client Desk in Hyderabad (Galaxy Towers, HITEC City) or Dubai (Marina Plaza) for confidential consultations.",
+      description: "Connect directly with our Private Client Desk in Hyderabad (Miyapur) or Dubai (Marina Plaza) for confidential consultations.",
       keywords: "contact arwin rise, luxury real estate hyderabad office, dubai marina property desk",
       ogImage: "/images/hero-luxury-penthouse.jpg",
       noIndex: false
@@ -119,16 +119,19 @@ Sitemap: https://arwinrise.com/sitemap.xml`,
 export const DEFAULT_SITE_SETTINGS: SiteSettings = {
   brandName: "ARWIN RISE",
   tagline: "Life Starts Here · Private Property Advisory",
-  primaryPhone: "+91 84649 54321",
-  displayPhone: "+91 84649 54321",
-  whatsappPhone: "918464954321",
+  primaryPhone: "+91 84649 55321",
+  displayPhone: "+91 84649 55321",
+  whatsappPhone: "918464955321",
   publicContactEmail: "concierge@arwinrise.com",
   leadTargetEmail: "kamalyellapragada@gmail.com",
-  officeAddressHyderabad: "Level 14, Galaxy Towers, Knowledge City, HITEC City, Hyderabad, Telangana 500081",
+  officeAddressHyderabad: "Plot No 102, HMT Swarnapuri Colony, Miyapur, Ranga Reddy, Telangana, 500050",
   officeAddressDubai: "Suite 2104, Marina Plaza, Dubai Marina, Dubai, UAE",
+  companyDivision: "A division of ARWIN TRADERS PRIVATE LIMITED",
+  gstNumber: "36AATCA2960K1Z6",
   reraNumberHyderabad: "P02400008192",
   reraNumberDubai: "ORN 29481",
   instagramUrl: "https://instagram.com",
+  facebookUrl: "https://facebook.com",
   linkedinUrl: "https://linkedin.com",
   youtubeUrl: "https://youtube.com",
   metaTitle: "ARWIN RISE | Life Starts Here · Private Property Advisory",
@@ -855,7 +858,17 @@ export const ContentProvider: React.FC<{ children: ReactNode }> = ({ children })
   const [settings, setSettings] = useState<SiteSettings>(() => {
     try {
       const cached = localStorage.getItem(`${STORAGE_KEY}_settings`);
-      return cached ? { ...DEFAULT_SITE_SETTINGS, ...JSON.parse(cached) } : DEFAULT_SITE_SETTINGS;
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (parsed.primaryPhone === "+91 84649 54321") parsed.primaryPhone = DEFAULT_SITE_SETTINGS.primaryPhone;
+        if (parsed.displayPhone === "+91 84649 54321") parsed.displayPhone = DEFAULT_SITE_SETTINGS.displayPhone;
+        if (parsed.whatsappPhone === "918464954321") parsed.whatsappPhone = DEFAULT_SITE_SETTINGS.whatsappPhone;
+        if (parsed.officeAddressHyderabad && parsed.officeAddressHyderabad.includes("Galaxy Towers")) {
+          parsed.officeAddressHyderabad = DEFAULT_SITE_SETTINGS.officeAddressHyderabad;
+        }
+        return { ...DEFAULT_SITE_SETTINGS, ...parsed };
+      }
+      return DEFAULT_SITE_SETTINGS;
     } catch {
       return DEFAULT_SITE_SETTINGS;
     }

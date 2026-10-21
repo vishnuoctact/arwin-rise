@@ -58,7 +58,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
   const pillarsTitle = aboutPage?.pillarsTitle || "Four Pillars of Advisory Excellence";
   const pillars = aboutPage?.pillars?.length ? aboutPage.pillars : FALLBACK_PILLARS;
   const currentStats = stats?.length ? stats : DEFAULT_STATS;
-  const whatsappPhone = settings?.whatsappPhone || "918464954321";
+  const whatsappPhone = settings?.whatsappPhone || "918464955321";
 
   const pillarIcons = [ShieldCheck, Compass, Leaf, Award];
 

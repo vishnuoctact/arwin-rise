@@ -4490,20 +4490,21 @@ export const AdminDashboard: React.FC<{ onNavigateHome: () => void }> = ({ onNav
                 "url": baseUrl,
                 "logo": `${baseUrl}${settings.logoDarkUrl || '/images/arwin-rise-lockup.png'}`,
                 "description": seoForm.siteDescription,
-                "telephone": settings.primaryPhone || "+91 84649 54321",
+                "telephone": settings.primaryPhone || "+91 84649 55321",
                 "email": settings.publicContactEmail || "concierge@arwinrise.com",
                 "priceRange": seoForm.priceRange || "₹1.5 Cr – ₹35 Cr+",
                 "address": {
                   "@type": "PostalAddress",
-                  "streetAddress": seoForm.streetAddress || "Level 14, Galaxy Towers, Knowledge City, HITEC City",
-                  "addressLocality": seoForm.addressLocality || "Hyderabad",
+                  "streetAddress": seoForm.streetAddress || "Plot No 102, HMT Swarnapuri Colony, Miyapur, Ranga Reddy",
+                  "addressLocality": seoForm.addressLocality || "Miyapur, Hyderabad",
                   "addressRegion": seoForm.addressRegion || "Telangana",
-                  "postalCode": seoForm.postalCode || "500081",
+                  "postalCode": seoForm.postalCode || "500050",
                   "addressCountry": seoForm.addressCountry || "IN"
                 },
                 "openingHours": seoForm.openingHours || "Mo-Sa 09:00-19:00",
                 "sameAs": [
                   settings.instagramUrl,
+                  settings.facebookUrl,
                   settings.linkedinUrl,
                   settings.youtubeUrl
                 ].filter(Boolean)
@@ -5151,7 +5152,7 @@ export const AdminDashboard: React.FC<{ onNavigateHome: () => void }> = ({ onNav
                             type="text"
                             value={seoForm.streetAddress}
                             onChange={(e) => setSeoForm({ ...seoForm, streetAddress: e.target.value })}
-                            placeholder="Level 14, Galaxy Towers, Knowledge City"
+                            placeholder="Plot No 102, HMT Swarnapuri Colony, Miyapur, Ranga Reddy"
                             className="w-full px-3 py-2 bg-[#090807] border border-[#26201B] rounded-lg text-[#FAF7F2] text-xs focus:outline-none focus:border-[#C5A880]"
                           />
                         </div>
@@ -5162,7 +5163,7 @@ export const AdminDashboard: React.FC<{ onNavigateHome: () => void }> = ({ onNav
                             type="text"
                             value={seoForm.addressLocality}
                             onChange={(e) => setSeoForm({ ...seoForm, addressLocality: e.target.value })}
-                            placeholder="Hyderabad"
+                            placeholder="Miyapur, Hyderabad"
                             className="w-full px-3 py-2 bg-[#090807] border border-[#26201B] rounded-lg text-[#FAF7F2] text-xs focus:outline-none focus:border-[#C5A880]"
                           />
                         </div>
@@ -5694,6 +5695,30 @@ export const AdminDashboard: React.FC<{ onNavigateHome: () => void }> = ({ onNav
                     />
                   </div>
 
+                  <div>
+                    <label className="block text-neutral-300 mb-1">Company Division Text</label>
+                    <input
+                      type="text"
+                      value={settings.companyDivision || ''}
+                      onChange={(e) => updateSettings({ companyDivision: e.target.value })}
+                      placeholder="A division of ARWIN TRADERS PRIVATE LIMITED"
+                      className="w-full px-3 py-2 bg-[#141210] border border-neutral-700 rounded-lg text-neutral-100 text-xs focus:outline-none focus:border-[#C5A880]"
+                    />
+                    <span className="text-[10px] text-neutral-500 mt-1 block">Displayed beneath the brand logo in the footer.</span>
+                  </div>
+
+                  <div>
+                    <label className="block text-neutral-300 mb-1">GST Number</label>
+                    <input
+                      type="text"
+                      value={settings.gstNumber || ''}
+                      onChange={(e) => updateSettings({ gstNumber: e.target.value })}
+                      placeholder="36AATCA2960K1Z6"
+                      className="w-full px-3 py-2 bg-[#141210] border border-neutral-700 rounded-lg text-neutral-100 text-xs font-mono focus:outline-none focus:border-[#C5A880]"
+                    />
+                    <span className="text-[10px] text-neutral-500 mt-1 block">Displayed in footer address block.</span>
+                  </div>
+
                   <div className="sm:col-span-2">
                     <label className="block text-neutral-300 mb-1">Hyderabad Office Address</label>
                     <input
@@ -5712,6 +5737,53 @@ export const AdminDashboard: React.FC<{ onNavigateHome: () => void }> = ({ onNav
                       onChange={(e) => updateSettings({ officeAddressDubai: e.target.value })}
                       className="w-full px-3 py-2 bg-[#141210] border border-neutral-700 rounded-lg text-neutral-100 text-xs"
                     />
+                  </div>
+
+                  {/* Social Media Links */}
+                  <div className="sm:col-span-2 pt-3 border-t border-neutral-800">
+                    <h4 className="text-xs font-bold text-[#C5A880] uppercase tracking-wider mb-3">Footer Social Media Links</h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-neutral-300 mb-1">Instagram URL</label>
+                        <input
+                          type="url"
+                          value={settings.instagramUrl || ''}
+                          onChange={(e) => updateSettings({ instagramUrl: e.target.value })}
+                          placeholder="https://instagram.com"
+                          className="w-full px-3 py-2 bg-[#141210] border border-neutral-700 rounded-lg text-neutral-100 text-xs focus:outline-none focus:border-[#C5A880]"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-neutral-300 mb-1">Facebook URL</label>
+                        <input
+                          type="url"
+                          value={settings.facebookUrl || ''}
+                          onChange={(e) => updateSettings({ facebookUrl: e.target.value })}
+                          placeholder="https://facebook.com"
+                          className="w-full px-3 py-2 bg-[#141210] border border-neutral-700 rounded-lg text-neutral-100 text-xs focus:outline-none focus:border-[#C5A880]"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-neutral-300 mb-1">LinkedIn URL</label>
+                        <input
+                          type="url"
+                          value={settings.linkedinUrl || ''}
+                          onChange={(e) => updateSettings({ linkedinUrl: e.target.value })}
+                          placeholder="https://linkedin.com"
+                          className="w-full px-3 py-2 bg-[#141210] border border-neutral-700 rounded-lg text-neutral-100 text-xs focus:outline-none focus:border-[#C5A880]"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-neutral-300 mb-1">YouTube URL</label>
+                        <input
+                          type="url"
+                          value={settings.youtubeUrl || ''}
+                          onChange={(e) => updateSettings({ youtubeUrl: e.target.value })}
+                          placeholder="https://youtube.com"
+                          className="w-full px-3 py-2 bg-[#141210] border border-neutral-700 rounded-lg text-neutral-100 text-xs focus:outline-none focus:border-[#C5A880]"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
 

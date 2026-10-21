@@ -323,12 +323,12 @@ export const ProjectLandingPage: React.FC<ProjectLandingPageProps> = ({
                     Your confidential token is: <strong className="font-mono text-[#771722]">{token}</strong>. Our Private Advisory Desk will reach out within 2 hours.
                   </p>
                   <a
-                    href="https://wa.me/918464954321"
+                    href="https://wa.me/918464955321"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-3 inline-block w-full bg-[#25D366] hover:bg-[#20ba5a] text-white py-2.5 px-4 text-xs font-sans font-bold tracking-wider uppercase transition-colors"
                   >
-                    CHAT ON WHATSAPP (+91 84649 54321)
+                    CHAT ON WHATSAPP (+91 84649 55321)
                   </a>
                 </div>
               ) : (
@@ -354,7 +354,7 @@ export const ProjectLandingPage: React.FC<ProjectLandingPageProps> = ({
                     <input
                       type="tel"
                       required
-                      placeholder="+91 84649 54321"
+                      placeholder="+91 84649 55321"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className="w-full px-3.5 py-2.5 bg-[#FAF7F2] border border-[#EAE3DA] text-xs font-sans text-[#222222] focus:outline-none focus:border-[#C5A880]"
@@ -408,7 +408,7 @@ export const ProjectLandingPage: React.FC<ProjectLandingPageProps> = ({
               {/* Direct Hotline */}
               <div className="pt-4 border-t border-[#F0EBE1] text-xs text-neutral-600 font-sans space-y-2">
                 <a 
-                  href="https://wa.me/918464954321?text=Hello%20Arwin%20Rise,%20I%20would%20like%20to%20inquire%20about%20a%20private%20residence%20viewing."
+                  href="https://wa.me/918464955321?text=Hello%20Arwin%20Rise,%20I%20would%20like%20to%20inquire%20about%20a%20private%20residence%20viewing."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 hover:text-[#771722] transition-colors group"

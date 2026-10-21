@@ -121,7 +121,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
         {/* Bottom CTA */}
         <div className="pt-6 border-t border-[#2E2E2E] space-y-3">
           <a
-            href="https://wa.me/918464954321?text=Hello%20Arwin%20Rise%20Concierge,%20I%20would%20like%20to%20connect%20with%20an%20Advisor."
+            href="https://wa.me/918464955321?text=Hello%20Arwin%20Rise%20Concierge,%20I%20would%20like%20to%20connect%20with%20an%20Advisor."
             target="_blank"
             rel="noopener noreferrer"
             className="w-full py-3.5 bg-[#911925] hover:bg-[#7A131D] text-white font-semibold text-xs rounded-xl shadow-lg flex items-center justify-center gap-2 transition-all cursor-pointer"

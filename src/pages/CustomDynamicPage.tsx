@@ -50,7 +50,7 @@ export const CustomDynamicPage: React.FC<CustomDynamicPageProps> = ({
     }
     if (action === 'whatsapp') {
       window.open(
-        `https://wa.me/${settings.whatsappPhone || '918464954321'}?text=Hello%20ARWIN%20RISE,%20I%20am%20inquiring%20about%20${encodeURIComponent(page.title)}.`,
+        `https://wa.me/${settings.whatsappPhone || '918464955321'}?text=Hello%20ARWIN%20RISE,%20I%20am%20inquiring%20about%20${encodeURIComponent(page.title)}.`,
         '_blank'
       );
       return;
@@ -78,7 +78,7 @@ export const CustomDynamicPage: React.FC<CustomDynamicPageProps> = ({
       else onNavigate('contact');
     } else if (clean === 'whatsapp') {
       window.open(
-        `https://wa.me/${settings.whatsappPhone || '918464954321'}?text=Hello%20ARWIN%20RISE,%20I%20am%20inquiring%20about%20${encodeURIComponent(page.title)}.`,
+        `https://wa.me/${settings.whatsappPhone || '918464955321'}?text=Hello%20ARWIN%20RISE,%20I%20am%20inquiring%20about%20${encodeURIComponent(page.title)}.`,
         '_blank'
       );
     } else if (clean.startsWith('http')) {
@@ -166,7 +166,7 @@ export const CustomDynamicPage: React.FC<CustomDynamicPageProps> = ({
               </button>
 
               <a
-                href={`https://wa.me/${settings.whatsappPhone || '918464954321'}?text=Hello%20ARWIN%20RISE,%20I%20would%20like%20to%20inquire%20about%20${encodeURIComponent(page.title)}.`}
+                href={`https://wa.me/${settings.whatsappPhone || '918464955321'}?text=Hello%20ARWIN%20RISE,%20I%20would%20like%20to%20inquire%20about%20${encodeURIComponent(page.title)}.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-transparent hover:bg-white/10 text-white border border-[#C5A880]/40 px-6 py-3.5 text-xs font-sans font-medium tracking-[0.14em] uppercase transition-colors"
@@ -502,7 +502,7 @@ export const CustomDynamicPage: React.FC<CustomDynamicPageProps> = ({
                           onClick={() => {
                             const msg = section.ctaWhatsappMsg || `Hello Arwin Rise Concierge, I am inquiring about ${page.title}.`;
                             window.open(
-                              `https://wa.me/${settings.whatsappPhone || '918464954321'}?text=${encodeURIComponent(msg)}`,
+                              `https://wa.me/${settings.whatsappPhone || '918464955321'}?text=${encodeURIComponent(msg)}`,
                               '_blank'
                             );
                           }}

@@ -22,7 +22,7 @@ export const PartnerWithUsBanner: React.FC<PartnerWithUsBannerProps> = ({ onOpen
   const whatsappCtaText = partnerSection?.whatsappCtaText || "APPLY VIA WHATSAPP";
   const whatsappMessage = partnerSection?.whatsappMessage || "Hello Arwin Rise Hiring Desk, I am a serious professional interested in the Real Estate Career opportunity.";
   const modalCtaText = partnerSection?.modalCtaText || "SUBMIT RESUME";
-  const whatsappPhone = settings?.whatsappPhone || "918464954321";
+  const whatsappPhone = settings?.whatsappPhone || "918464955321";
 
   return (
     <section id="careers" className="py-12 sm:py-14 lg:py-16 bg-white border-t border-[#EAE3DA]">
