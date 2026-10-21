@@ -327,7 +327,7 @@ export const AdminDashboard: React.FC<{ onNavigateHome: () => void }> = ({ onNav
     e.preventDefault();
     const success = adminLogin(passcode);
     if (!success) {
-      setAuthError('Invalid passcode. Default passcode: arwinrise2026');
+      setAuthError('Invalid passcode. Please enter the authorized access key.');
     } else {
       setAuthError('');
       showToast('Welcome to ARWIN RISE Admin Portal');
@@ -385,7 +385,7 @@ export const AdminDashboard: React.FC<{ onNavigateHome: () => void }> = ({ onNav
           </form>
 
           <div className="pt-4 border-t border-neutral-800 flex items-center justify-between text-xs text-neutral-500">
-            <span>Passcode: <code className="text-[#C5A880]">arwinrise2026</code></span>
+            <span>Authorized Personnel Only</span>
             <button
               onClick={onNavigateHome}
               className="text-neutral-400 hover:text-[#C5A880] transition-colors flex items-center gap-1"
